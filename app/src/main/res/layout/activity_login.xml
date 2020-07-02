@@ -11,7 +11,7 @@
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:background="@android:color/white"
         android:ems="10"
@@ -37,21 +37,20 @@
         app:layout_constraintTop_toBottomOf="@+id/email_edittext_login" />
 
     <Button
-        android:layout_marginTop="8dp"
         android:id="@+id/login_button_login"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Register"
+        android:layout_marginTop="8dp"
+        android:text="Login"
         app:layout_constraintEnd_toEndOf="@+id/password_edittext_login"
         app:layout_constraintStart_toStartOf="@+id/password_edittext_login"
         app:layout_constraintTop_toBottomOf="@+id/password_edittext_login" />
 
     <TextView
-        android:layout_marginTop="8dp"
-
-        android:id="@+id/already_have_account_text_view"
+        android:id="@+id/back_to_register_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:text="back to Register"
         android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="@+id/login_button_login"
