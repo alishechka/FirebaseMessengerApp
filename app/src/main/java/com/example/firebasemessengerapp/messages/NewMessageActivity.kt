@@ -1,14 +1,15 @@
-package com.example.firebasemessengerapp
+package com.example.firebasemessengerapp.messages
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import androidx.recyclerview.widget.RecyclerView
+import androidx.appcompat.app.AppCompatActivity
+import com.example.firebasemessengerapp.R
+import com.example.firebasemessengerapp.models.User
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import com.google.firebase.ktx.Firebase
 import com.squareup.picasso.Picasso
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
@@ -26,11 +27,14 @@ class NewMessageActivity : AppCompatActivity() {
         fetchUsers()
     }
 
+    companion object {
+        val USER_KEY = "user_key"
+    }
+
     private fun fetchUsers() {
         val ref = FirebaseDatabase.getInstance().getReference("/users")
         ref.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onCancelled(error: DatabaseError) {
-
             }
 
             override fun onDataChange(snapshot: DataSnapshot) {
@@ -41,6 +45,13 @@ class NewMessageActivity : AppCompatActivity() {
                     if (user != null) {
                         adapter.add(UserItem(user))
                     }
+                }
+                adapter.setOnItemClickListener { item, view ->
+                    val intent = Intent(view.context, ChatLogActivity::class.java)
+                    val userItem = item as UserItem
+                    intent.putExtra(USER_KEY, userItem.user)
+                    startActivity(intent)
+                    finish()
                 }
                 recyclerview_newmessage.adapter = adapter
             }

@@ -1,14 +1,16 @@
-package com.example.firebasemessengerapp
+package com.example.firebasemessengerapp.registerlogin
 
 import android.app.Activity
 import android.content.Intent
-import android.graphics.drawable.BitmapDrawable
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.firebasemessengerapp.R
+import com.example.firebasemessengerapp.messages.LatestMessagesActivity
+import com.example.firebasemessengerapp.models.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
@@ -101,7 +103,11 @@ class RegisterActivity : AppCompatActivity() {
     private fun saveUserToFirebaseDatabase(profileImageUrl: String) {
         val uid = FirebaseAuth.getInstance().uid ?: ""
         val ref = FirebaseDatabase.getInstance().getReference("/users/$uid")
-        val user = User(uid, username_edittext_register.text.toString(), profileImageUrl)
+        val user = User(
+            uid,
+            username_edittext_register.text.toString(),
+            profileImageUrl
+        )
         ref.setValue(user)
             .addOnSuccessListener {
                 Log.d(TAG, "Finally we saved user to DB")
@@ -116,6 +122,3 @@ class RegisterActivity : AppCompatActivity() {
     }
 }
 
-class User(val uid: String, val userName: String, val profileImageUrl: String){
-    constructor():this("","","")
-}
