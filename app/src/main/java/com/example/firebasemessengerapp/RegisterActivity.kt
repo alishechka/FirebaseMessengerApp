@@ -101,16 +101,21 @@ class RegisterActivity : AppCompatActivity() {
     private fun saveUserToFirebaseDatabase(profileImageUrl: String) {
         val uid = FirebaseAuth.getInstance().uid ?: ""
         val ref = FirebaseDatabase.getInstance().getReference("/users/$uid")
-
         val user = User(uid, username_edittext_register.text.toString(), profileImageUrl)
-
-
         ref.setValue(user)
             .addOnSuccessListener {
                 Log.d(TAG, "Finally we saved user to DB")
-            }
+                val intent = Intent(this, LatestMessagesActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
+                startActivity(intent)
 
+            }
+            .addOnFailureListener {
+                Log.d(TAG, "Failed to set value to databse: ${it.message}")
+            }
     }
 }
 
-class User(val uid: String, val userName: String, val profileImageUrl: String)
+class User(val uid: String, val userName: String, val profileImageUrl: String){
+    constructor():this("","","")
+}
