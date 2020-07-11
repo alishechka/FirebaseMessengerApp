@@ -96,18 +96,17 @@ class ChatLogActivity : AppCompatActivity() {
             .addOnSuccessListener {
                 Log.d(TAG, "saves chat message : ${reference.key}")
                 editTextchat_log.text.clear()
-                recyclerview_chat_log.scrollToPosition(adapter.itemCount-1)
+                recyclerview_chat_log.scrollToPosition(adapter.itemCount - 1)
             }
         toReference.setValue(chatMessage)
-    }
 
-//    private fun setupDummyData() {
-//        val adapter = GroupAdapter<GroupieViewHolder>()
-//        adapter.add(ChatFromItem("FROM"))
-//        adapter.add(ChatToItem("TO"))
-//
-//        recyclerview_chat_log.adapter = adapter
-//    }
+        val latestMessageRef =
+            FirebaseDatabase.getInstance().getReference("/latest-messages/$fromId/$toId")
+        latestMessageRef.setValue(chatMessage)
+        val latestMessageToRef =
+            FirebaseDatabase.getInstance().getReference("/latest-messages/$toId/$fromId")
+        latestMessageToRef.setValue(chatMessage)
+    }
 }
 
 class ChatFromItem(val text: String, val user: User) : Item<GroupieViewHolder>() {
