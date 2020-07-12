@@ -1,25 +1,27 @@
 package com.example.firebasemessengerapp.messages
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.DividerItemDecoration
 import com.example.firebasemessengerapp.R
+import com.example.firebasemessengerapp.messages.NewMessageActivity.Companion.USER_KEY
 import com.example.firebasemessengerapp.models.ChatMessage
 import com.example.firebasemessengerapp.models.User
 import com.example.firebasemessengerapp.registerlogin.RegisterActivity
+import com.example.firebasemessengerapp.views.LatestMessageRow
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
-import com.xwray.groupie.Item
 import kotlinx.android.synthetic.main.activity_latest_messages.*
-import kotlinx.android.synthetic.main.latest_message_row.view.*
 
 class LatestMessagesActivity : AppCompatActivity() {
     companion object {
+        val TAG = "LatestMessagesActivity"
         var currentUser: User? = null
     }
 
@@ -31,20 +33,24 @@ class LatestMessagesActivity : AppCompatActivity() {
         setContentView(R.layout.activity_latest_messages)
 
         recyclerview_latest_messages.adapter = adapter
+        recyclerview_latest_messages.addItemDecoration(
+            DividerItemDecoration(
+                this,
+                DividerItemDecoration.VERTICAL
+            )
+        )
+
+        adapter.setOnItemClickListener { item, view ->
+            Log.d(TAG, "123")
+            val intent = Intent(this, ChatLogActivity::class.java)
+            val row = item as LatestMessageRow
+            intent.putExtra(USER_KEY, row.chatPartnerUser)
+            startActivity(intent)
+        }
 
         listenToLatestMessages()
         fetchCurrentUser()
         verifyUserLoggedIn()
-    }
-
-    class LatestMessageRow(val chatMessage: ChatMessage) : Item<GroupieViewHolder>() {
-        override fun getLayout(): Int {
-            return R.layout.latest_message_row
-        }
-
-        override fun bind(viewHolder: GroupieViewHolder, position: Int) {
-            viewHolder.itemView.message_textView_latest_message.text = chatMessage.text
-        }
     }
 
     private fun refreshRecyclerViewMessage() {
@@ -81,7 +87,6 @@ class LatestMessagesActivity : AppCompatActivity() {
 
         })
     }
-
 
     private fun fetchCurrentUser() {
         val uid = FirebaseAuth.getInstance().uid
