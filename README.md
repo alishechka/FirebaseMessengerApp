@@ -1,29 +1,16 @@
-# Foobar
+# Messenger App from 
 
-Foobar is a Python library for dealing with word pluralization.
-
-## Installation
-
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
-
-```bash
-pip install foobar
+## CircleImageView
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    
+this CircleImageView replaces the normal ImageView, 
+also you can set border width and colour for it by following code
+```xml
+ <de.hdodenhof.circleimageview.CircleImageView
+        app:civ_border_width="2dp"
+        app:civ_border_color="@android:color/black"
+         />
 ```
+![](drawable/circleImage.png)
 
-## Usage
-
-```python
-import foobar
-
-foobar.pluralize('word') # returns 'words'
-foobar.pluralize('goose') # returns 'geese'
-foobar.singularize('phenomena') # returns 'phenomenon'
-```
-
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
-
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
+    implementation "com.xwray:groupie:2.8.0"
