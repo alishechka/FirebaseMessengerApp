@@ -1,6 +1,7 @@
 # Messenger App from 
 
 ## CircleImageView
+![](https://github.com/alishechka/FirebaseMessengerApp/blob/master/app/src/main/res/drawable/circleimage.png)
 
 use this dependency
 
@@ -13,7 +14,7 @@ also you can set border width and colour for it by this code
         app:civ_border_color="@android:color/black"
          />
 ```
-![](drawable/circleimage.png)
-![test](https://github.com/alishechka/FirebaseMessengerApp/blob/master/app/src/main/res/drawable/circleimage.png)
 
     implementation "com.xwray:groupie:2.8.0"
+    
+[dependency resource](https://github.com/hdodenhof/CircleImageView "link")
