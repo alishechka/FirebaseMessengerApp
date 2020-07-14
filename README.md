@@ -6,8 +6,8 @@ Not the prettiest App but very educational
 
 [Video Stereo Link](https://www.youtube.com/watch?v=ihJGxFu2u9Q&list=PL0dzCUj1L5JE-jiBHjxlmXEkQkum_M3R- "common build that app")
 
-- [Groupie] (###Groupie)
-- [Groupie] (###CircleImageView)
+- [Groupie](#Groupie)
+- [Groupie](#CircleImageView)
 
 ### Groupie
 > Groupie is a simple, flexible library for complex RecyclerView layouts.
@@ -57,58 +57,4 @@ also you can set border width and colour by this code
          />
 ```
 
-    
 [dependency resource](https://github.com/hdodenhof/CircleImageView "link")
-
-- [Heading](#heading)
-  * [Sub-heading](#sub-heading)
-    + [Sub-sub-heading](#sub-sub-heading)
-- [Heading](#heading-1)
-  * [Sub-heading](#sub-heading-1)
-    + [Sub-sub-heading](#sub-sub-heading-1)
-- [Heading](#heading-2)
-  * [Sub-heading](#sub-heading-2)
-    + [Sub-sub-heading](#sub-sub-heading-2)
-
-
-# Heading levels
-
-> This is a fixture to test heading levels
-
-<!-- toc -->
-dddddddddddd
-## Heading
-
-This is an h1 heading
-
-### Sub-heading
-
-This is an h2 heading
-
-#### Sub-sub-heading
-
-This is an h3 heading
-
-## Heading
-
-This is an h1 heading
-
-### Sub-heading
-
-This is an h2 heading
-
-#### Sub-sub-heading
-
-This is an h3 heading
-
-## Heading
-
-This is an h1 heading
-
-### Sub-heading
-
-This is an h2 heading
-
-#### Sub-sub-heading
-
-This is an h3 heading
