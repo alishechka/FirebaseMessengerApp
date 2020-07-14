@@ -25,13 +25,15 @@ class UserItem(val user: User) : Item<GroupieViewHolder>() {
     }
 }
 ```
-As you see the ViewHolder is generic and you don't need all the "boiler plate code"
-Override Functions are **getLayout** and **bind** and no need for **getItemCount**
+As you see the ViewHolder is generic and you don't need all the "boiler plate code"\
+Override Functions are **getLayout** and **bind**,  no need for **getItemCount**
 
 [dependency resource](https://github.com/lisawray/groupie "link")
 
 
 ## CircleImageView
+>A fast circular ImageView perfect for profile images
+
 ![](https://github.com/alishechka/FirebaseMessengerApp/blob/master/app/src/main/res/drawable/circleimage.png)
 
 use this dependency
