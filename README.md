@@ -6,7 +6,10 @@ Not the prettiest App but very educational
 
 [Video Stereo Link](https://www.youtube.com/watch?v=ihJGxFu2u9Q&list=PL0dzCUj1L5JE-jiBHjxlmXEkQkum_M3R- "common build that app")
 
-### Groupie 
+- [Groupie] (###Groupie)
+- [Groupie] (###CircleImageView)
+
+### Groupie
 > Groupie is a simple, flexible library for complex RecyclerView layouts.
 
     implementation "com.xwray:groupie:2.8.0"
@@ -73,7 +76,7 @@ also you can set border width and colour by this code
 > This is a fixture to test heading levels
 
 <!-- toc -->
-
+dddddddddddd
 ## Heading
 
 This is an h1 heading
