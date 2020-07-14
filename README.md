@@ -1,4 +1,14 @@
-# Messenger App from 
+# Messenger App
+
+Followed a Youtuber's 10 part course in building a Messenger App with Firebase\
+It was quite interesting to build something that uses Realtime data from FireBase\
+Not the prettiest App but very educational
+
+https://www.youtube.com/watch?v=ihJGxFu2u9Q&list=PL0dzCUj1L5JE-jiBHjxlmXEkQkum_M3R-
+
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=https://www.youtube.com/watch?v=ihJGxFu2u9Q&list=PL0dzCUj1L5JE-jiBHjxlmXEkQkum_M3R-" target="_blank"><img src="http://img.youtube.com/vi/https://www.youtube.com/watch?v=ihJGxFu2u9Q&list=PL0dzCUj1L5JE-jiBHjxlmXEkQkum_M3R-/0.jpg" 
+alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 
 
 ## Groupie 
