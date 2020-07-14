@@ -67,6 +67,5 @@ class UserItem(val user: User) : Item<GroupieViewHolder>() {
     override fun bind(viewHolder: GroupieViewHolder, position: Int) {
         viewHolder.itemView.username_textview_newmessage.text = user.userName
         Picasso.get().load(user.profileImageUrl).into(viewHolder.itemView.imageView_newmessage)
-
     }
 }
