@@ -7,12 +7,10 @@ Not the prettiest App but very educational
 [Video Stereo Link](https://www.youtube.com/watch?v=ihJGxFu2u9Q&list=PL0dzCUj1L5JE-jiBHjxlmXEkQkum_M3R- "common build that app")
 
 - [Groupie](#Groupie)
-- [Groupie](#CircleImageView)
+- [CircleImageView](#CircleImageView)
 
 ### Groupie
 > Groupie is a simple, flexible library for complex RecyclerView layouts.
-
-    implementation "com.xwray:groupie:2.8.0"
     
 Groupie includes a module for Kotlin and Kotlin Android extensions.\
 Never write a ViewHolder again, Kotlin generates view references\
@@ -36,6 +34,7 @@ class UserItem(val user: User) : Item<GroupieViewHolder>() {
 As you see the ViewHolder is generic and you don't need all the "boiler plate code"\
 Override Functions are **getLayout** and **bind**,  no need for `getItemCount`
 
+    implementation "com.xwray:groupie:2.8.0"
 [dependency resource](https://github.com/lisawray/groupie "link")
 
 
@@ -44,10 +43,7 @@ Override Functions are **getLayout** and **bind**,  no need for `getItemCount`
 
 ![](https://github.com/alishechka/FirebaseMessengerApp/blob/master/app/src/main/res/drawable/circleimage.png)
 
-use this dependency
 
-    implementation 'de.hdodenhof:circleimageview:3.1.0'
-    
 CircleImageView replaces the normal ImageView,\
 also you can set border width and colour by this code
 ```xml
@@ -56,5 +52,8 @@ also you can set border width and colour by this code
         app:civ_border_color="@android:color/black"
          />
 ```
+use this dependency
 
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    
 [dependency resource](https://github.com/hdodenhof/CircleImageView "link")
